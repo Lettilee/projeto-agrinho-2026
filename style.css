@@ -1,0 +1,218 @@
+/* Configurações Gerais e Cores Fofas */
+:root {
+    --cor-fundo: #f4f9f4;      /* Creme esverdeado bem clarinho */
+    --cor-principal: #a3d2a3;  /* Verdinho pastel fofo */
+    --cor-principal-hover: #8cb88c; 
+    --cor-texto: #3e523e;      /* Verde escuro para leitura confortável */
+    --cor-card: #ffffff;       /* Branco para destacar os cards */
+    --cor-solar: #ffe699;      /* Amarelo pastel */
+    --cor-biogas: #c3e6cb;     /* Verde folha pastel */
+    --cor-eolica: #bee5eb;     /* Azul/Ciano pastel */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+}
+
+/* Menu Superior (Navbar) */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    background-color: var(--cor-card);
+    box-shadow: 0 4px 15px rgba(163, 210, 163, 0.15);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar .logo {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--cor-texto);
+}
+
+.navbar .logo span {
+    color: var(--cor-principal);
+}
+
+.navbar nav a {
+    text-decoration: none;
+    color: var(--cor-texto);
+    font-weight: 600;
+    margin-left: 25px;
+    transition: color 0.3s ease;
+}
+
+.navbar nav a:hover {
+    color: var(--cor-principal);
+}
+
+/* Seção de Boas-Vindas (Hero) */
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 80px 20px;
+    background: linear-gradient(180deg, #ffffff 0%, var(--cor-fundo) 100%);
+}
+
+.hero-content h1 {
+    font-size: 2.8rem;
+    color: var(--cor-texto);
+    margin-bottom: 15px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+    line-height: 1.6;
+}
+
+/* Botão Principal com Animação */
+.btn-principal {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: var(--cor-principal);
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 50px;
+    box-shadow: 0 6px 12px rgba(163, 210, 163, 0.4);
+    transition: all 0.3s ease;
+}
+
+.btn-principal:hover {
+    transform: translateY(-3px); /* Flutua para cima */
+    box-shadow: 0 8px 18px rgba(163, 210, 163, 0.6);
+    background-color: var(--cor-principal-hover);
+}
+
+.btn-principal:active {
+    transform: translateY(1px); /* Efeito de clique afundando */
+}
+
+/* Container dos Cards */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* Estilo dos Cards de Energia */
+.card-energia {
+    display: flex;
+    background-color: var(--cor-card);
+    border-radius: 24px;
+    margin-bottom: 40px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+    transition: transform 0.3s ease;
+}
+
+.card-energia:hover {
+    transform: scale(1.02); /* Dá um zoom bem de leve e fofo ao passar o mouse */
+}
+
+/* Faz o layout alternar a ordem dos cards de forma automática e bonita */
+.card-energia.reverse {
+    flex-direction: row-reverse;
+}
+
+.card-imagem {
+    flex: 1;
+    min-height: 250px;
+}
+
+.card-imagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-texto {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* Tags Fofas */
+.tag {
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.tag-solar { background-color: var(--cor-solar); }
+.tag-biogas { background-color: var(--cor-biogas); }
+.tag-eolica { background-color: var(--cor-eolica); }
+
+.card-texto h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.card-texto p {
+    line-height: 1.6;
+    margin-bottom: 25px;
+    font-size: 1rem;
+}
+
+/* Botões dos Cards com Animação */
+.btn-saber-mais {
+    padding: 10px 24px;
+    border: 2px solid var(--cor-principal);
+    background-color: transparent;
+    color: var(--cor-texto);
+    font-weight: 700;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-saber-mais:hover {
+    background-color: var(--cor-principal);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.btn-saber-mais:active {
+    transform: translateY(1px);
+}
+
+/* Responsividade para Celular */
+@media (max-width: 768px) {
+    .navbar { padding: 15px 5%; }
+    .card-energia, .card-energia.reverse {
+        flex-direction: column;
+    }
+    .card-texto { padding: 25px; }
+    .hero-content h1 { font-size: 2rem; }
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 30px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--cor-texto);
+    opacity: 0.7;
+}
